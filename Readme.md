@@ -3,9 +3,9 @@
 The application is made using Scala 2.12, using mainly akka components (akka-actors)
 
 ### Running the application:  
-- Navigate to `.../follower-maze/FMS`  
-- Run `sbt run`  
-- The server starts listenning on the specified ports `9009` and `9090` for clients. 
+- Navigate to the root of the project  
+- Run `sbt run` or `sbt reStart`. Or after openning sbt in the root directory, use `run` or `reStart` 
+- The server starts listenning on the specified ports `9090` and `9099` for clients. 
 - After receiving and processing all the messages, the Server terminates the clients and the user actors, and is ready to accept new connections.
 
 ### Testing:   
@@ -23,3 +23,5 @@ The application is made using Scala 2.12, using mainly akka components (akka-act
 - Improved server actor providing back pressure, and buffering against the event stream client.
 - Improved dead-letter handling. Since the current implementation assumes user actors by the message, it does not check whether or not these users exist.
 
+### Misc: 
+I noticed some problems and artifacts with the clients if running with configurations to send more than 10M events. corrupted messages start to appear and random `\n` within a message also start to appear.
