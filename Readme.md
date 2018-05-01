@@ -11,7 +11,7 @@ The application is made using Scala 2.12, using mainly akka components (akka-act
 ### Testing:   
 - Simply running `sbt test` will run all the designated unit tests
 
-###Diagrams:
+### Diagrams:
 ![Arch Diagram](arch_diagram.png)
 
 ### Details:  
